@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "phina.js": [
+        "phinaFile/globalized"
+      ]
+    },
+    "lib": [
+      "dom",
+      "es2017"
+    ]
+  },
+  "files": [
+    "../game.ts"
+  ]
+}
