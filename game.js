@@ -196,7 +196,7 @@ var ClearScene = /** @class */ (function (_super) {
         _this.ClearMinutes = param.minutes;
         _this.ClearSeconds = param.seconds;
         _this.AnimationEndFrag = false;
-        _this.backgroundColor = 'pink';
+        _this.backgroundColor = 'skyblue';
         //クリア時間表示
         var disp = Label({
             text: _this.ClearMinutes.toString() + ": " + _this.ClearSeconds.toFixed(3).toString(),

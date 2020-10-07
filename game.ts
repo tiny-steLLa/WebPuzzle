@@ -192,7 +192,7 @@ class ClearScene extends DisplayScene {
         this.ClearMinutes = param.minutes;
         this.ClearSeconds = param.seconds;
         this.AnimationEndFrag = false;
-        this.backgroundColor = 'pink';
+        this.backgroundColor = 'skyblue';
 
         //クリア時間表示
         let disp = Label({
