@@ -260,6 +260,9 @@ var MainScene = /** @class */ (function (_super) {
             _this.TimeLabel.text = (_this.Minutes + ":" + _this.Second.toFixed(3)).toString();
         };
         _this.onpointstart = function () {
+            if (_this.Cleared) {
+                _this.exit("ClearScene", { seconds: _this.Second, minutes: _this.Minutes });
+            }
             if (_this.clearCheck() == true && _this.Cleared == false) {
                 _this.Cleared = true;
                 // ピース削除処理（すぐシーン遷移するなら必要ないかもしれない）
@@ -287,7 +290,13 @@ var MainScene = /** @class */ (function (_super) {
                 spr.position = new Vector2(WindowWidth / 2, WindowWidth / 2 + TopMargin);
                 spr.setWidth(WindowWidth).setHeight(WindowWidth);
                 spr.addChildTo(_this);
-                _this.exit("ClearScene", { seconds: _this.Second, minutes: _this.Minutes });
+                var self = _this;
+                Tweener().rotateBy;
+                var disp = Label({
+                    text: "クリックして次へ",
+                    fontSize: 60
+                }).addChildTo(_this).setPosition(WindowWidth / 2, window.screen.height - 100)
+                    .tweener.fadeOut(500).fadeIn(500).setLoop(true);
             }
         };
         _this.PuzzleSize = param.puzzleSize;

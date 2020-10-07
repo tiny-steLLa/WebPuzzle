@@ -332,6 +332,10 @@ class MainScene extends DisplayScene {
 
 
     onpointstart = () => {
+        if (this.Cleared) {
+            this.exit("ClearScene", { seconds: this.Second, minutes: this.Minutes })
+        }
+
         if (this.clearCheck() == true && this.Cleared == false) {
             this.Cleared = true;
             // ピース削除処理（すぐシーン遷移するなら必要ないかもしれない）
@@ -359,7 +363,13 @@ class MainScene extends DisplayScene {
             spr.position = new Vector2(WindowWidth / 2, WindowWidth / 2 + TopMargin);
             spr.setWidth(WindowWidth).setHeight(WindowWidth);
             spr.addChildTo(this);
-            this.exit("ClearScene", { seconds: this.Second, minutes: this.Minutes })
+            var self = this;
+            Tweener().rotateBy
+            let disp = Label({
+                text: "クリックして次へ",
+                fontSize: 60,
+            }).addChildTo(this).setPosition(WindowWidth / 2, window.screen.height - 100)
+            .tweener.fadeOut(500).fadeIn(500).setLoop(true)
         }
     }
 }
